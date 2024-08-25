@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MRSofUTK</title>
-    <meta http-equiv="refresh" content="0; url=password.html">
     <style>
         body {
             background-color: #000;
@@ -38,6 +37,15 @@
 </head>
 <body>
     <h1>Howdy</h1>
+    <h1>Welcome to the Main Content</h1>
+    <!-- Main content goes here -->
+    <script>
+        // Check if the user is authenticated
+        if (localStorage.getItem('authenticated') !== 'true') {
+            // Redirect to password.html if not authenticated
+            window.location.href = 'password.html';
+        }
+    </script>
     <div id="mc_embed_shell">
         <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
         <div id="mc_embed_signup">
