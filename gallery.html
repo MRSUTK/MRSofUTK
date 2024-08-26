@@ -11,11 +11,20 @@
             padding: 0;
             background-color: #f4f4f4;
         }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+        h1, h2 {
+            color: #333; /* Darker color for better contrast */
+        }
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 10px;
-            padding: 20px;
+            padding: 20px 0; /* Added padding only top and bottom */
         }
         .gallery img {
             width: 100%;
@@ -23,12 +32,6 @@
             display: block;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-            background-color: #fff;
         }
         a {
             text-decoration: none;
@@ -49,9 +52,9 @@
         <h2>Science as Art 2022-2023</h2>
         <div class="gallery">
             <!-- Add your images here -->
-            <img src="images/photo1.jpg" alt="Photo 1">
-            <img src="images/photo2.jpg" alt="Photo 2">
-            <img src="images/photo3.jpg" alt="Photo 3">
+            <img src="images/photo1.jpg" alt="Description of Photo 1">
+            <img src="images/photo2.jpg" alt="Description of Photo 2">
+            <img src="images/photo3.jpg" alt="Description of Photo 3">
             <!-- More images -->
         </div>
     </div>
