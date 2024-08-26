@@ -119,35 +119,39 @@
     </div>
 
     <script>
-        // Get modal elements
-        var modal = document.getElementById("modal");
-        var modalImage = document.getElementById("modal-image");
-        var captionText = document.getElementById("caption");
-        var closeButton = document.getElementsByClassName("close")[0];
+        // Function to handle opening the modal
+        function openModal(imageSrc, captionText) {
+            var modal = document.getElementById("modal");
+            var modalImage = document.getElementById("modal-image");
+            var caption = document.getElementById("caption");
 
-        // Get all gallery images
-        var galleryImages = document.querySelectorAll(".gallery-item img");
+            modal.style.display = "block";
+            modalImage.src = imageSrc;
+            caption.innerHTML = captionText;
+        }
 
-        // Add click event to each image
-        galleryImages.forEach(function(image) {
-            image.onclick = function() {
-                modal.style.display = "block";
-                modalImage.src = this.src;
-                captionText.innerHTML = this.getAttribute("data-caption");
-            }
-        });
-
-        // Close the modal when the close button is clicked
-        closeButton.onclick = function() {
+        // Function to handle closing the modal
+        function closeModal() {
+            var modal = document.getElementById("modal");
             modal.style.display = "none";
         }
 
-        // Close the modal when clicking outside of the image
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
+        // Event listeners for image click
+        document.querySelectorAll(".gallery-item img").forEach(function(img) {
+            img.addEventListener("click", function() {
+                openModal(this.src, this.getAttribute("data-caption"));
+            });
+        });
+
+        // Event listener for closing the modal
+        document.querySelector(".close").addEventListener("click", closeModal);
+
+        // Event listener for clicking outside the modal
+        window.addEventListener("click", function(event) {
+            if (event.target === document.getElementById("modal")) {
+                closeModal();
             }
-        }
+        });
     </script>
 </body>
 </html>
